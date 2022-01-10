@@ -8,7 +8,7 @@ html, body, .container{
     }
 }
 
-h2 {
+.heading {
     font-size: 3rem;
     color: yellow;
     text-shadow: 5px 5px 5px #000000;
@@ -44,7 +44,13 @@ a:hover {
     flex: 2 0 auto;
     align-items: center;
     justify-content: space-between;
-    padding: 0 0.5rem;
+    padding: 0 2.5rem;
+}
+
+@media screen and (min-width: 1440px) {
+    .logoca {
+        padding: 0 3.9rem;
+    }
 }
 
 .logo {
@@ -70,14 +76,25 @@ a:hover {
     border-radius: 5px;
 }
 
+.link__login:hover {
+    border: 2px solid rgb(245,68,68);
+    color: rgb(245,68,68);
+    background-color: transparent;
+}
+
 .cabecalho__links {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
     background: rgb(245,68,68);
     background: linear-gradient(90deg, rgba(245,68,68,1) 0%, rgba(238,62,62,1) 36%, rgba(255,48,48,1) 48%, rgba(240,41,41,1) 70%, rgba(254,66,66,1) 98%);
+    border-top: 2px solid #020202;
+    border-bottom: 2px solid #020202;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+}
+
+.cabecalho__link {
     color: white;
     font-weight: 900;
     font-family: 'Montserrat';
@@ -95,7 +112,8 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: stretch;
+    gap: 2rem;
 }
 
 .box_home {
@@ -103,55 +121,25 @@ a:hover {
     max-width: 250px;
     border-radius: 7px;
     border: 2px solid black;
+    box-shadow: 5px 5px 8px #000000;
+    overflow: hidden;
+    padding: 1.5%;
+}
+
+#bg-home-1 {
     background: linear-gradient(90deg, gray, green);
-    box-shadow: 5px 5px 8px #000000;
-    overflow: hidden;
-    padding: 1.5%;
 }
-
-.box_home2 {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 7px;
-    border: 2px solid black;
+#bg-home-2 {
     background: linear-gradient(90deg, gray, red);
-    box-shadow: 5px 5px 8px #000000;
-    overflow: hidden;
-    padding: 1.5%;
 }
-
-.box_home3 {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 7px;
-    border: 2px solid black;
+#bg-home-3 {
     background: linear-gradient(90deg, gray, blue);
-    box-shadow: 5px 5px 8px #000000;
-    overflow: hidden;
-    padding: 1.5%;
 }
-
-.box_home4 {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 7px;
-    box-shadow: 0 2px 10px 2px #00000010;
-    border: 2px solid black;
+#bg-home-4 {
     background: linear-gradient(90deg, gray, yellow);
-    box-shadow: 5px 5px 8px #000000;
-    margin-left: 1rem;
-    overflow: hidden;
 }
-
-.box_home5 {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 7px;
-    box-shadow: 0 2px 10px 2px #00000010;
-    border: 2px solid black;
+#bg-home-5 {
     background: linear-gradient(90deg, red, orange, green, blue, purple);
-    box-shadow: 5px 5px 8px #000000;
-    overflow: hidden;
 }
 
 .home__img {
@@ -185,21 +173,12 @@ a:hover {
     text-shadow: 5px 5px 8px #000000;
 }
 
-.texto_baixo1 {
+.texto_baixo {
     width: 100%;
     text-align: center;
     font-size: 1.5rem;
     padding-bottom: 2rem;
     padding-top: 0.5rem;
-    color: white;
-}
-
-.texto_baixo {
-    width: 100%;
-    text-align: center;
-    font-size: 1.5rem;
-    padding-bottom: 10px;
-    padding-top: 5px;
     color: white;
 }
 
@@ -222,30 +201,53 @@ a:hover {
 
 .box_vantagens {
     display: flex;
-    background-color: red;
+    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
+    justify-content: space-around;
+    background-color: red;
     padding-top: 3rem;
+    padding-right: 1rem;
     padding-bottom: 3rem;
 }
 
 .texto_video {
     padding-left: 3rem;
     padding-right: 5rem;
+    color: white;
     font-family: 'Montserrat';
     font-weight: 900;
-    color: white;
+    line-height: 23px;
 }
 
 .titulo_video {
     font-family: 'Montserrat';
     font-weight: 900;
     font-size: 2rem;
-    padding-bottom: 1rem;
+    padding-bottom: 1.8rem;
+    line-height: 45px;
 }
 
 .video_abertura {
-    position: relative;
-    right: 5vw;
+    min-width: 500px;
+    min-height: 250px;
+}
+
+@media screen and (max-width: 768px) {
+    .box_vantagens {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .texto_video {
+        margin-bottom: 2rem;
+    }
+
+    .video_abertura {
+        min-width: 500px;
+        min-height: 200px;
+    }
 }
 
 .footer {
@@ -259,30 +261,44 @@ a:hover {
 }
 
 .pokebolapng {
-    position: relative;
     width: 5rem;
-    left: 90vw;
-    top: 2rem;
 }
 
-h4 {
+.subheading {
     font-family: 'Montserrat';
     font-weight: 900;
     font-size: 2rem;
     padding-bottom: 1rem;
 }
 
-.contatosrodape {
+.footer-logos {
+    padding: 1rem 0.8rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+
+.footer-logos img {
+    display: block;
+}
+
+.contatos-rodape {
     color: white;
     padding: 3rem;
+    padding-top: 2rem;
     padding-left: 5rem;
     text-align: center;
     font-family: 'Montserrat';
     font-weight: 300;
 }
 
+.contatos-rodape p:not(:last-child) {
+    margin-bottom: 12px;
+}
+
 .productions {
-    padding-top: 5rem;
+    padding-top: 3rem;
     font-family: 'Montserrat';
     font-weight: 900;
     font-size: 1rem;
