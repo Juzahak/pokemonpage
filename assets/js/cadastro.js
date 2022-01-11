@@ -23,57 +23,57 @@ let msgError = document.querySelector("#msgError")
 nome.addEventListener("keyup", () => {
 
     if (nome.value.length <= 3) {
-     labelNome.setAttribute ("style", "color: red");
-     labelNome.innerHTML = "<strong>Nome *Insira no minimo 3 caracteres</strong>"
-     nome.setAttribute("style", "border-color: red")
-     validNome = false;
+        labelNome.setAttribute("style", "color: red");
+        labelNome.innerHTML = "<strong>Nome *Insira no minimo 3 caracteres</strong>"
+        nome.setAttribute("style", "border-color: red")
+        validNome = false;
     } else {
-     labelNome.setAttribute ("style", "color: lime");
-     labelNome.innerHTML = "Nome"
-     nome.setAttribute("style", "border-color: lime")
-     validNome = true;
+        labelNome.setAttribute("style", "color: lime");
+        labelNome.innerHTML = "Nome"
+        nome.setAttribute("style", "border-color: lime")
+        validNome = true;
     }
 })
 
 usuario.addEventListener("keyup", () => {
 
     if (usuario.value.length <= 4) {
-     labelUsuario.setAttribute ("style", "color: red");
-     labelUsuario.innerHTML = "<strong>Usuario *Insira no minimo 5 caracteres</strong>"
-     usuario.setAttribute("style", "border-color: red")
-     validUsuario = false;
+        labelUsuario.setAttribute("style", "color: red");
+        labelUsuario.innerHTML = "<strong>Usuario *Insira no minimo 5 caracteres</strong>"
+        usuario.setAttribute("style", "border-color: red")
+        validUsuario = false;
     } else {
-     labelUsuario.setAttribute ("style", "color: lime");
-     labelUsuario.innerHTML = "Usuario"
-     usuario.setAttribute("style", "border-color: lime")
-     validUsuario = true;
+        labelUsuario.setAttribute("style", "color: lime");
+        labelUsuario.innerHTML = "Usuario"
+        usuario.setAttribute("style", "border-color: lime")
+        validUsuario = true;
     }
 })
 
 senha.addEventListener("keyup", () => {
 
     if (senha.value.length <= 4) {
-     labelSenha.setAttribute ("style", "color: red");
-     labelSenha.innerHTML = "<strong>Usuario *Insira no minimo 6 caracteres</strong>"
-     senha.setAttribute("style", "border-color: red")
-     validSenha = false;
+        labelSenha.setAttribute("style", "color: red");
+        labelSenha.innerHTML = "<strong>Usuario *Insira no minimo 6 caracteres</strong>"
+        senha.setAttribute("style", "border-color: red")
+        validSenha = false;
     } else {
-        labelSenha.setAttribute ("style", "color: lime");
+        labelSenha.setAttribute("style", "color: lime");
         labelSenha.innerHTML = "Senha"
-     senha.setAttribute("style", "border-color: lime")
-     validSenha = true;
+        senha.setAttribute("style", "border-color: lime")
+        validSenha = true;
     }
 })
 
 confirmeSenha.addEventListener("keyup", () => {
 
-    if (senha.value != confirmeSenha.value) {
-     labelConfirmeSenha.setAttribute ("style", "color: red");
-     labelConfirmeSenha.innerHTML = "<strong>Confirmar Senha *As senhas não conferem</strong>"
-     confirmeSenha.setAttribute("style", "border-color: red")
-     validConfirmeSenha = false;
+    if (senha.value !== confirmeSenha.value) {
+        labelConfirmeSenha.setAttribute("style", "color: red");
+        labelConfirmeSenha.innerHTML = "<strong>Confirmar Senha *As senhas não conferem</strong>"
+        confirmeSenha.setAttribute("style", "border-color: red")
+        validConfirmeSenha = false;
     } else {
-        labelConfirmeSenha.setAttribute ("style", "color: lime");
+        labelConfirmeSenha.setAttribute("style", "color: lime");
         labelConfirmeSenha.innerHTML = "Confirmar Senha"
         confirmeSenha.setAttribute("style", "border-color: lime")
         validConfirmeSenha = true;
@@ -84,17 +84,15 @@ confirmeSenha.addEventListener("keyup", () => {
 
 
 function cadastrar() {
-    if(validNome && validUsuario && validSenha && validConfirmeSenha){
+    if (validNome && validUsuario && validSenha && validConfirmeSenha) {
         let listaUser = JSON.parse(localStorage.getItem("listaUser") || "[]")
 
-        listaUser.push(
-            {
-                nomeCad: nome.value,
-                userCad: usuario.value,
-                senhaCad: senha.value,
-                valorInicial: 200
-            }
-        )
+        listaUser.push({
+            nomeCad: nome.value,
+            userCad: usuario.value,
+            senhaCad: senha.value,
+            valorInicial: 200
+        })
 
         localStorage.setItem("listaUser", JSON.stringify(listaUser))
 
@@ -104,11 +102,11 @@ function cadastrar() {
         msgError.setAttribute("style", "display: none")
         msgError.innerHTML = ""
 
-        setTimeout (() =>{
-            window.location.href = "./login1.html"
+        setTimeout(() => {
+            window.location.href = "./login.html"
         }, 3000)
 
-        
+
 
     } else {
         msgError.setAttribute("style", "display: block")
@@ -119,28 +117,26 @@ function cadastrar() {
 }
 
 
-btn.addEventListener("click", () =>{
+btn.addEventListener("click", () => {
 
     let inputSenha = document.querySelector("#senha")
-    if(inputSenha.getAttribute("type") == "password"){
+    if (inputSenha.getAttribute("type") === "password") {
         inputSenha.setAttribute("type", "text")
-    }else{
+    } else {
         inputSenha.setAttribute("type", "password")
     }
 
- })
+})
 
 
 
-btnconfirme.addEventListener("click", () =>{
+btnconfirme.addEventListener("click", () => {
 
     let inputConfirmeSenha = document.querySelector("#confirmSenha")
-    if(inputConfirmeSenha.getAttribute("type") == "password"){
+    if (inputConfirmeSenha.getAttribute("type") === "password") {
         inputConfirmeSenha.setAttribute("type", "text")
-    }else{
+    } else {
         inputConfirmeSenha.setAttribute("type", "password")
     }
 
- })
-
-
+})

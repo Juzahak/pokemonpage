@@ -1,44 +1,42 @@
-
-
 let btn = document.querySelector("#verSenha")
 let btnconfirme = document.querySelector("#verConfirmeSenha")
 let senha = document.querySelector("#senha")
 let labelSenha = document.querySelector("#labelSenha")
 
-btn.addEventListener("click", () =>{
+btn.addEventListener("click", () => {
 
     let inputSenha = document.querySelector("#senha")
-    if(inputSenha.getAttribute("type") == "password"){
+    if (inputSenha.getAttribute("type") === "password") {
         inputSenha.setAttribute("type", "text")
-    }else{
+    } else {
         inputSenha.setAttribute("type", "password")
     }
 
- })
+})
 
- function entrar() {
-     let usuario = document.querySelector("#usuario")
-     let userLabel = document.querySelector("#userLabel")
+function entrar() {
+    let usuario = document.querySelector("#usuario")
+    let userLabel = document.querySelector("#userLabel")
 
-     let senha = document.querySelector("#senha")
-     let senhaLabel = document.querySelector("#senhaLabel")
+    let senha = document.querySelector("#senha")
+    let senhaLabel = document.querySelector("#senhaLabel")
 
-     let msgError = document.querySelector("#msgError")
-     let listaUser = []
+    let msgError = document.querySelector("#msgError")
+    let listaUser = []
 
-     let userValid = {
-         nome: "",
-         user: "",
-         senha: "",
-     }
+    let userValid = {
+        nome: "",
+        user: "",
+        senha: "",
+    }
 
 
-     
 
-     listaUser = JSON.parse(localStorage.getItem("listaUser"))
-    
+
+    listaUser = JSON.parse(localStorage.getItem("listaUser"))
+
     listaUser.forEach((item) => {
-        if(usuario.value == item.userCad && senha.value == item.senhaCad){
+        if (usuario.value == item.userCad && senha.value == item.senhaCad) {
             userValid = {
                 nome: item.nomeCad,
                 user: item.userCad,
@@ -49,11 +47,11 @@ btn.addEventListener("click", () =>{
         }
     });
 
-    if(usuario.value == userValid.user && senha.value == userValid.senha) {
+    if (usuario.value == userValid.user && senha.value == userValid.senha) {
         window.location.href = "./logugu.html"
 
         let token = Math.random().toString(16).substr(2) + Math.random().toString(16).substr(2)
-        localStorage.setItem("token", token) 
+        localStorage.setItem("token", token)
 
         localStorage.setItem("userLogado", JSON.stringify(userValid))
     } else {
@@ -66,6 +64,5 @@ btn.addEventListener("click", () =>{
         msgError.innerHTML = "Usuario ou senha incorretos"
         usuario.focus()
     }
-     
- }
 
+}

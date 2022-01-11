@@ -6,7 +6,9 @@ let estrelasCimaValor = JSON.parse(localStorage.getItem("Estrelas"))
 
 listaUser = JSON.parse(localStorage.getItem("listaUser"))
 
-let {Estrelas} = JSON.parse(localStorage.getItem("userLogado"))
+let {
+    Estrelas
+} = JSON.parse(localStorage.getItem("userLogado"))
 
 
 nomeCima.innerHTML = userLogado.nome
@@ -14,7 +16,7 @@ nomeCima.innerHTML = userLogado.nome
 estrelasCima.innerHTML = userLogado.Estrelas + "★"
 
 
-    if(localStorage.getItem("token") == null) {
+if (localStorage.getItem("token") == null) {
     alert("Você precisa esta logado!")
     window.location.href = "./login1.html"
 }
@@ -27,17 +29,19 @@ function sair() {
 }
 
 function encontrarUsuario() {
-   
-    for(var i = 0; i < listaUser.length; i++) {
-        let [{valorInicial}] = JSON.parse(localStorage.getItem("listaUser"))
+
+    for (var i = 0; i < listaUser.length; i++) {
+        let [{
+            valorInicial
+        }] = JSON.parse(localStorage.getItem("listaUser"))
         let lista = listaUser[i]
         let valorcheio = lista.valorInicial
         let achei = userLogado.nome === lista.nomeCad
         console.log(achei, valorcheio, lista)
-        
-        if(userLogado.nome === lista.nomeCad) {
-          
-            
+
+        if (userLogado.nome === lista.nomeCad) {
+
+
             let valorcheio = lista.valorInicial = Estrelas
 
             const NewStarUser = [...listaUser]
@@ -47,6 +51,8 @@ function encontrarUsuario() {
             console.log(NewStarUser)
 
             return
-        }else{console.log("false", valorInicial)}
-}
+        } else {
+            console.log("false", valorInicial)
+        }
+    }
 }
