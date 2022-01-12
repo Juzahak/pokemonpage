@@ -1,71 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
 
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Cadastro | PokePage</title>
-        <link href="reset.css" rel="stylesheet">
-        <link href="cadastro1.css" rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;900&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <!-- link file reset css -->
+        <link rel="stylesheet" href="assets/css/reset.css" />
+
+        <!-- link file css -->
+        <link rel="stylesheet" href="assets/css/styles.css" />
     </head>
 
-    <header class="cabecalho">
+    <body>
+        <div class="container">
+            <!-- header -->
+            <header class="cabecalho">
+                <div class="logoca">
+                    <!-- logo -->
+                    <a href="index.html">
+                        <img src="assets/imagens/Pokemon-logo.png" alt="Pokemon Logo" class="logo" />
+                    </a>
 
-        <div class="./Imagens/logoca">
-        <h1><img src="./Imagens/Pokemon-logo.png" alt="Pokemon Logo" class="logoca"></h1>
+                    <!-- links hero -->
+                    <div class="posicao_links">
+                        <a href="login.html" class="logo_loguin links__hero link__login">Login</a>
+                    </div>
+                </div>
 
-        <nav class="posicao_links">
+                <!-- header links -->
+                <nav class="cabecalho__links">
+                    <a href="index.html" class="btn  cabecalho__link">
+                        Home
+                    </a>
+                    <a href="pokemonprodutos.html" class="btn cabecalho__link">
+                        Pokemons
+                    </a>
+                    <a href="contato.html" class="btn cabecalho__link">
+                        Contato
+                    </a>
+                    <a href="cadastro.html" class="btn cabecalho__link">
+                        Cadastro
+                    </a>
+                </nav>
+            </header>
+            <!-- end of header -->
 
-          <a href="cadastro1.html" class="logo_cadastro">Cadastro</a>
-          <a href="login1.html" class="logo_loguin">Loguin</a>
+            <!-- card -->
+            <div class="container-center container">
+                <main class="card cadastro">
+                    <!-- title -->
+                    <h1 class="title-contato"> Cadastrar-se </h1>
 
-    </nav>
-    </div>
+                    <!-- mensage error -->
+                    <div id="msgError"></div>
+                    <!-- mensage sucess -->
+                    <div id="msgSucesso"></div>
 
-    </header>
-
-        <nav class="cabecalho__links">
-                    <a href="index.html">HOME</a>
-                    <a href="pokemonprodutos.html">POKEMONS</a>
-                    <a href="contato.html">CONTATO</a>
-            </nav>
-
-
-
-
-
-
-
-
-
-            <body>
-                <div class="container">
-                    <div class="card">
-                        <h1> Cadastrar-se </h1>
-
-                        <div id="msgError"></div>
-                        <div id="msgSucesso"></div>
-
+                    <form>
+                        <!-- single label float -->
                         <div class="label-float">
                             <input type="text" id="nome" placeholder="" required>
                             <label id="labelNome" for="nome">Nome</label>
                         </div>
 
+                        <!-- single label float -->
                         <div class="label-float">
                             <input type="text" id="usuario" placeholder="" required>
                             <label id="labelUsuario" for="usuario">Usuario</label>
                         </div>
 
+                        <!-- single label float -->
                         <div class="label-float">
                             <input type="password" id="senha" placeholder="" required>
                             <label id="labelSenha" for="senha">Senha</label>
                             <i id="verSenha" class="fa fa-eye" aria-hidden="true"></i>
                         </div>
 
+                        <!-- single label float -->
                         <div class="label-float">
                             <input type="password" id="confirmSenha" placeholder="" required>
                             <label id="labelConfirmeSenha" for="confirmSenha">Confirme a Senha</label>
@@ -73,34 +91,32 @@
                         </div>
 
                         <div class="justify-center">
-                            <button onclick="cadastrar()">Cadastrar</button>
+                            <button class="btn-white" onclick="cadastrar()">Cadastrar</button>
                         </div>
+                    </form>
+                </main>
+            </div>
+            <!-- end of card -->
 
-
-
+            <!-- footer -->
+            <footer class="footer">
+                <div class="footer-logos">
+                    <div>
+                        <img src="assets/imagens/Pokemon-logo.png" alt="pokemon" class="pokemonpng" />
+                    </div>
+                    <div>
+                        <img src="assets/imagens/pokebola.png" alt="pokebola" class="pokebolapng" />
                     </div>
                 </div>
 
-
-
-            </body>
-
-            <script src="assets/js/cadastro.js"></script>
-
-
-
-
-            <footer class="footer">
-
-                <div>
-                <img src="./Imagens/Pokemon-logo.png" alt="pokemon" class="pokemonpng">
-                <img src="./Imagens/pokebola.png" alt="pokebola" class="pokebolapng">
+                <div class="contatos-rodape">
+                    <h4 class="subheading">Contatos</h4>
+                    <p>Telefone: (XX) XXXXX-XXXX</p>
+                    <p>E-mail: XXXXXXXXXX@XXX.com.br</p>
+                    <p class="productions">@JUZAHAKPRODUCTIONS 2021</p>
                 </div>
-
-                <ul class="contatosrodape">
-                    <h4>Contatos</h4>
-                    <li>Telefone: (XX) XXXXX-XXXX</li>
-                    <li>E-mail: XXXXXXXXXX@XXX.com.br</li>
-                    <li class="productions">@JUZAHAKPRODUCTIONS 2021</li>
-                </ul>
             </footer>
+            <!-- end of footer -->
+        </div>
+    </body>
+</html>
