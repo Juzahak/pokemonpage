@@ -18,14 +18,14 @@ estrelasCima.innerHTML = userLogado.Estrelas + "★"
 
 if (localStorage.getItem("token") == null) {
     alert("Você precisa esta logado!")
-    window.location.href = "./login1.html"
+    window.location.href = "./login.html"
 }
 
 function sair() {
     encontrarUsuario()
     localStorage.removeItem("token")
     localStorage.removeItem("userLogado")
-    window.location.href = "./login1.html"
+    window.location.href = "./login.html"
 }
 
 function encontrarUsuario() {
