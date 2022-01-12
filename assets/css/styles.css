@@ -23,6 +23,14 @@ html, body, .container{
     text-shadow: 2px 2px 2px black;
 }
 
+.title-contato {
+    text-align: center;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 2.5rem;
+    margin: 0rem 3rem 2rem 3rem;
+}
+
 .heading {
     font-size: 3rem;
     color: yellow;
@@ -45,6 +53,46 @@ a {
 
 a:hover {
     color: #FECA05;
+}
+
+.btn-white {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+    padding: 7px;
+    font-weight: bold;
+    font-size: 12pt;
+    margin-top: 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s ease-out;
+    width: 200px;
+}
+.btn-white:hover {
+    background-color: rgb(136, 1, 1);
+}
+
+.sair-botao {
+    margin-left: 2rem;
+    padding: 0rem 1rem;
+    border-style: none;
+    background: darkred;
+    color: white;
+    font-size: 1rem;
+    font-weight: 900;
+    border-radius: 5px;
+}
+.sair-botao:hover {
+    background: rgb(90, 0, 0);
+    transition: all .3s ease-out;
+    transform: scale(1.01);
+}
+
+hr {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    width: 60%;
 }
 
 /*
@@ -346,22 +394,6 @@ a:hover {
     Estrelas
 ==============
 */
-.sair-botao {
-    margin-left: 2rem;
-    padding: 0rem 1rem;
-    border-style: none;
-    background: darkred;
-    color: white;
-    font-size: 1rem;
-    font-weight: 900;
-    border-radius: 5px;
-}
-.sair-botao:hover {
-    background: rgb(90, 0, 0);
-    transition: all .3s ease-out;
-    transform: scale(1.01);
-}
-
 .alinhamento {
     width: 100%;
     background: #eee;
@@ -486,4 +518,130 @@ form .row:not(:last-child) {
     font-weight: 900;
     display: flex;
     align-items: center;
+}
+
+/*
+==============
+    Contato
+==============
+*/
+.contato.corpo {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background: none;
+    box-shadow: none;
+}
+
+.card {
+    width: 40vw;
+    background-color: rgb(223, 12, 12);
+    padding: 4rem 1rem;
+    border-radius: 4%;
+    box-shadow: 3px 3px 1px 0px #00000080;
+}
+
+@media screen and (max-width: 760px){
+    .card {
+        width: 76vw;
+    }
+}
+@media screen and (max-width: 375px){
+    .card {
+        width: 100vw;
+    }
+}
+@media screen and (min-width: 1440px){
+    .card {
+        width: 409.59px;
+    }
+}
+
+.card p {
+    color: white;
+    font-size: 14pt;
+    text-align: center;
+}
+
+.card a {
+    color: #eee;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all .3s ease-out;
+}
+.card a:hover {
+    color: rgb(139, 139, 139);
+}
+
+.card form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.fa-eye {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+.label-float input {
+    width: 100%;
+    padding: 5px 5px;
+    display: inline-block;
+    border: 0;
+    border-bottom: 1px solid white;
+    background-color: transparent;
+    outline: none;
+    min-width: 180px;
+    font-size: 16px;
+    transition: all .3s ease-out;
+    border-radius: 0;
+}
+
+.label-float{
+    position: relative;
+    padding-top: 13px;
+    margin-top: 3%;
+    margin-bottom: 5%;
+}
+
+.label-float input:focus{
+    border-bottom: 2px solid white;
+}
+
+#usuario {
+    color: white;
+}
+
+#senha {
+    color: black;
+    padding-bottom: 5rem;
+    background: white;
+    position: relative;
+    top: 1.5rem;
+    /* width: 100%; */
+    min-width: 280px;
+}
+
+.label-float label {
+    color: white;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin-top: 13px;
+    transition: all .3s ease-out;
+}
+
+.label-float input:focus + label,
+.label-float input:valid + label{
+    font-size: 13px;
+    margin-top: 0;
+    color: white;
 }
