@@ -13,6 +13,11 @@ html, body, .container{
     }
 }
 
+.corpo-reset {
+    background: none!important;
+    box-shadow: none!important;
+}
+
 .title {
     width: 100%;
     text-align: center;
@@ -531,8 +536,6 @@ form .row:not(:last-child) {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 20px;
-    background: none;
-    box-shadow: none;
 }
 
 .card {
@@ -644,4 +647,33 @@ form .row:not(:last-child) {
     font-size: 13px;
     margin-top: 0;
     color: white;
+}
+
+/*
+==============
+    Login
+==============
+*/
+.login.corpo {
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.login .card .title-contato {
+    margin-bottom: 1rem;
+}
+
+.login hr {
+    margin: 24px 0;
+}
+
+@media screen and (max-width: 425px){
+    .login .card {
+        width: 100vw;
+    }
+}
+@media screen and (min-width: 768px){
+    .login .card {
+        max-width: 328px;
+    }
 }
