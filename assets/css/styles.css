@@ -4,13 +4,21 @@
 ==============
  */
 html, body, .container{
-    min-width: 100vh
+    min-width: 100vh;
 }
 
 @media screen and (max-width: 420px) {
     html, body, .container {
         min-width: 100vh;
     }
+}
+
+.container-center {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .corpo-reset {
@@ -353,6 +361,8 @@ hr {
 */
 .footer {
     background-color: black;
+    /* height: 40vw; */
+    width: 100%;
 }
 
 .pokemonpng {
@@ -619,6 +629,10 @@ form .row:not(:last-child) {
     border-radius: 0;
 }
 
+input:-internal-autofill-selected {
+    background-color: transparent;
+}
+
 .label-float{
     position: relative;
     padding-top: 13px;
@@ -632,16 +646,6 @@ form .row:not(:last-child) {
 
 #usuario {
     color: white;
-}
-
-#senha {
-    color: black;
-    padding-bottom: 5rem;
-    background: white;
-    position: relative;
-    top: 1.5rem;
-    /* width: 100%; */
-    min-width: 280px;
 }
 
 .label-float label {
@@ -677,6 +681,10 @@ form .row:not(:last-child) {
 
 .login hr {
     margin: 24px 0;
+}
+
+.login .card form p.justify-center {
+    line-height: 33px;
 }
 
 @media screen and (max-width: 425px){
@@ -819,4 +827,26 @@ form .row:not(:last-child) {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+/*
+==============
+    Cadastro
+==============
+*/
+.cadastro {
+    width: 378.88px;
+    padding: 2.5rem 1rem;
+}
+
+.cadastro form .label-float {
+    min-width: 290px;
+}
+
+input#nome:-internal-autofill-selected {
+    background: #df0c0c!important;
+}
+
+#nome {
+    color: white;
 }
